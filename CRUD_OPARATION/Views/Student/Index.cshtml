@@ -1,0 +1,40 @@
+﻿@model CRUD_OPARATION.Models.Student_Information
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("AddStudent","Student",FormMethod.Post))
+{
+<div class="container">
+    <div class="form-group">
+        @Html.HiddenFor(x => x.ID)
+        <label> Fast Name</label>
+        @Html.ValidationMessageFor(x => x.FastName)
+        <div>@Html.TextBoxFor(x => x.FastName)</div>
+
+    </div>
+    <div class="form-group">
+        <label> Last Name</label>
+        @Html.ValidationMessageFor(x => x.LastName)
+        <div>@Html.TextBoxFor(x => x.LastName)</div>
+    </div>
+    <div class="form-group">
+        <label> Email</label>
+        @Html.ValidationMessageFor(x => x.Email)
+        <div>@Html.TextBoxFor(x => x.Email)</div>
+    </div>
+    <div class="form-group">
+        <label> Phone</label>
+        @Html.ValidationMessageFor(x => x.Phone)
+        <div> @Html.TextBoxFor(x => x.Phone)</div>
+    </div>
+    <div class="form-group">
+        <label> Description</label>
+        <div>@Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = "10" })</div> 
+    </div>
+    <div><button type="submit">Submit </button></div>
+    
+
+</div>
+}
+
